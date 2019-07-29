@@ -228,7 +228,24 @@ module.exports = function( THREE ) {
 
 		};
 
-		//
+    this.zoomIn = function () {
+
+      dollyOut( getZoomScale() );
+
+      this.update();
+
+    };
+
+    this.zoomOut = function () {
+
+      dollyIn( getZoomScale() );
+
+      this.update();
+
+    };
+
+
+    //
 		// internals
 		//
 
