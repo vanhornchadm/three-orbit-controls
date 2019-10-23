@@ -254,6 +254,8 @@ module.exports = function( THREE ) {
 		var changeEvent = { type: 'change' };
 		var startEvent = { type: 'start' };
 		var endEvent = { type: 'end' };
+		var scrollStartEvent = { type: 'scrollstart' };
+		var scrollEndEvent = { type: 'scrollend' };
 
 		var STATE = { NONE : - 1, ROTATE : 0, DOLLY : 1, PAN : 2, TOUCH_ROTATE : 3, TOUCH_DOLLY : 4, TOUCH_PAN : 5 };
 
@@ -761,8 +763,8 @@ module.exports = function( THREE ) {
 
 			handleMouseWheel( event );
 
-			scope.dispatchEvent( startEvent ); // not sure why these are here...
-			scope.dispatchEvent( endEvent );
+			scope.dispatchEvent( scrollStartEvent ); // not sure why these are here...
+			scope.dispatchEvent( scrollEndEvent );
 
 		}
 
