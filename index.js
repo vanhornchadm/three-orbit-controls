@@ -256,6 +256,8 @@ module.exports = function( THREE ) {
 		var endEvent = { type: 'end' };
 		var scrollStartEvent = { type: 'scrollstart' };
 		var scrollEndEvent = { type: 'scrollend' };
+		var panStartEvent = { type: 'panstart' };
+		var panEndEvent = { type: 'panend' };
 
 		var STATE = { NONE : - 1, ROTATE : 0, DOLLY : 1, PAN : 2, TOUCH_ROTATE : 3, TOUCH_DOLLY : 4, TOUCH_PAN : 5 };
 
@@ -886,6 +888,8 @@ module.exports = function( THREE ) {
 
 			event.preventDefault();
 
+			scope.dispatchEvent( panStartEvent ); // not sure why these are here...
+			scope.dispatchEvent( panEndEvent );
 		}
 
 		//
